@@ -1,15 +1,11 @@
-import Cards from '../../components/cards/Cards';
-import Header from '../../components/header/Header';
-import styles from './Home.module.css';
+import Cards from "../../components/cards/Cards";
+import Header from "../../components/header/Header";
 
-export default function Home(){
-    return(
-        <>
-        <section className={styles.gallery}>
-            <Header/>
-            <Cards/>
-        </section>
-        
-        </>
-    )
+export default function Home() {
+  return (
+    <>
+        <Header />
+        <Cards />
+    </>
+  );
 }

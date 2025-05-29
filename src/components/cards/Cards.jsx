@@ -6,7 +6,7 @@ export default function Cards() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://picsum.photos/v2/list?page=1&limit=24")
+    fetch("https://picsum.photos/v2/list?page=1&limit=20")
       .then((res) => res.json())
       .then((data) => {
 
@@ -41,15 +41,22 @@ export default function Cards() {
   }
 
   return (
+    
+    <>
+    
     <article className={styles.cardsGallery}>
+      
+
       {images.map((img) => (
         <img
           key={img.id}
-          src={`https://picsum.photos/id/${img.id}/600/400`}
+          src={`https://picsum.photos/id/${img.id}/350/200`}
           alt={`Foto de ${img.author}`}
           loading="lazy"
         />
       ))}
     </article>
+    </>
+    
   );
 }
