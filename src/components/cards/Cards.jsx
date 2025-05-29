@@ -6,7 +6,7 @@ export default function Cards() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://picsum.photos/v2/list?page=1&limit=20")
+    fetch("https://picsum.photos/v2/list?page=1&limit=24")
       .then((res) => res.json())
       .then((data) => {
 

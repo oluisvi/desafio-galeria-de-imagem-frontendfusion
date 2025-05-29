@@ -5,7 +5,7 @@ import styles from './Home.module.css';
 export default function Home(){
     return(
         <>
-        <section className="">
+        <section className={styles.gallery}>
             <Header/>
             <Cards/>
         </section>

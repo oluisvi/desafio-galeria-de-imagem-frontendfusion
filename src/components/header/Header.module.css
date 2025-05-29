@@ -1,1 +1,10 @@
 /* Add your CSS styles for the Header component here */
+.headerTitle{
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    align-items: center;
+    justify-content: center;
+padding-top: 5%;
+}

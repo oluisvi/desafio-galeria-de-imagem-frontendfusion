@@ -4,5 +4,6 @@ export default function Header() {
 
   return (
     <>
+    <header className={styles.headerTitle}>Photo Gallery</header>
     </>
   )}
