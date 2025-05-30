@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 export default function Cards() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     fetch("https://picsum.photos/v2/list?page=1&limit=20")
       .then((res) => res.json())
       .then((data) => {
-
         // Pré-carrega as imagens manualmente
         const preloadImages = data.map((img) => {
           return new Promise((resolve) => {
@@ -40,23 +40,33 @@ export default function Cards() {
     );
   }
 
-  return (
-    
-    <>
-    
-    <article className={styles.cardsGallery}>
-      
+  const toggleFavorite = (id) => {
+    setFavorites((prev) =>
+      prev.includes(id) ? prev.filter((fav) => fav !== id) : [...prev, id]
+    );
+  };
 
-      {images.map((img) => (
-        <img
-          key={img.id}
-          src={`https://picsum.photos/id/${img.id}/350/200`}
-          alt={`Foto de ${img.author}`}
-          loading="lazy"
-        />
-      ))}
-    </article>
+  return (
+    <>
+      <article className={styles.cardsGallery}>
+        {images.map((img) => (
+          <div key={img.id} className={styles.card}>
+            <button
+              className={`${styles.favoriteIcon} ${
+                favorites.includes(img.id) ? styles.favorited : ""
+              }`}
+              onClick={() => toggleFavorite(img.id)}
+            >
+              <img src="../../assets/favorite-icon.svg" alt="favorite-svg" />
+            </button>
+            <img
+              src={`https://picsum.photos/id/${img.id}/350/200`}
+              alt={`Foto de ${img.author}`}
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </article>
     </>
-    
   );
 }
