@@ -1,20 +1,24 @@
 import styles from "./Cards.module.css";
 import { useEffect, useState } from "react";
+import {
+  getFavoritesFromStorage,
+  saveFavoritesToStorage,
+} from "../../utils/storage"; // ajuste o caminho se necessário
 
 export default function Cards() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
   const [favorites, setFavorites] = useState([]);
 
+  // Carrega os favoritos no início
   useEffect(() => {
-    const savedFavorites = localStorage.getItem("favorites");
-    if (savedFavorites) {
-      setFavorites(JSON.parse(savedFavorites));
-    }
+    const savedFavorites = getFavoritesFromStorage();
+    setFavorites(savedFavorites);
   }, []);
 
+  // Atualiza o localStorage sempre que favoritos mudar
   useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+    saveFavoritesToStorage(favorites);
   }, [favorites]);
 
   useEffect(() => {
