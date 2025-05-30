@@ -18,12 +18,12 @@
 
 .favoriteIcon {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  background: rgba(255, 255, 255, 0.7);
+  top: 6%;
+  right: 6%;
+  background: rgba(212, 211, 211, 0.7);
   border: none;
   border-radius: 50%;
-  padding: 6px;
+  padding: 0.2rem;
   cursor: pointer;
   z-index: 2;
   transition: transform 0.2s;
@@ -33,26 +33,26 @@
   transform: scale(1.1);
 }
 
-.favoriteIcon svg {
-  color: #aaa;
+.favoriteIcon img {
+  color: #4b4b4b;
 }
 
-.favorited svg {
-  color: #e63946;
+.favoritedSvg img {
+  color: #fde50c;
 }
 
-img {
+.cardImage {
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 1rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
 
-img:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+.cardImage:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
 }
 
 .loaderContainer {
