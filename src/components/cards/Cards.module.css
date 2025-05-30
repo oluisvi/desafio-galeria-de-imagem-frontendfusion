@@ -11,6 +11,35 @@
   transition: background 0.3s ease;
 }
 
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.favoriteIcon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s;
+}
+
+.favoriteIcon:hover {
+  transform: scale(1.1);
+}
+
+.favoriteIcon svg {
+  color: #aaa;
+}
+
+.favorited svg {
+  color: #e63946;
+}
 
 img {
   background-color: #fff;
