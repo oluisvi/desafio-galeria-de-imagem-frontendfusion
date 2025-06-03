@@ -12,19 +12,19 @@
 }
 
 .modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: #fff;
   padding: 2rem;
   border-radius: 12px;
   max-width: 90%;
   max-height: 90%;
-  overflow: none;
   position: relative;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
   animation: fadeIn 0.3s ease;
+  overflow: auto;
 }
 
 .modal img {
@@ -33,6 +33,17 @@
   border-radius: 8px;
   margin-top: 5%;
   margin-bottom: 1rem;
+}
+
+/* Descrição do autor e resolução */
+.modalInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
 }
 
 .closeButton {
@@ -45,6 +56,7 @@
   cursor: pointer;
 }
 
+/* Animação */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -56,16 +68,20 @@
   }
 }
 
+/* Tablets */
 @media (max-width: 1024px) {
-  .modalContent {
+  .modal {
     padding: 1.5rem;
-    max-width: 90%;
+    max-width: 95%;
+  }
+
+  .modal img {
+    width: 80%;
   }
 
   .modalInfo {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
+    font-size: 0.95rem;
+    padding: 0 1rem;
   }
 
   .closeButton {
@@ -75,13 +91,18 @@
 
 /* Celulares */
 @media (max-width: 600px) {
-  .modalContent {
+  .modal {
     padding: 1rem;
-    max-width: 95%;
+    max-width: 98%;
+  }
+
+  .modal img {
+    width: 100%;
+    margin-top: 1rem;
   }
 
   .modalInfo {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .closeButton {
