@@ -84,3 +84,49 @@
   }
 }
 
+
+/* Responsividade */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .cardsGallery {
+    grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+    padding: 2rem;
+    width: 90%;
+  }
+
+  .favoriteIcon {
+    top: 8%;
+    right: 8%;
+  }
+
+  .cardImage:hover {
+    transform: none; /* Evita zoom em telas touch */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+  .cardsGallery {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    gap: 12px;
+    padding: 1rem;
+    width: 95%;
+  }
+
+  .favoriteIcon {
+    top: 10%;
+    right: 10%;
+    padding: 0.3rem;
+  }
+
+  .cardImage {
+    border-radius: 0.75rem;
+  }
+
+  .cardImage:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
