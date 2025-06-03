@@ -19,12 +19,12 @@
   background: #fff;
   padding: 2rem;
   border-radius: 12px;
-  max-width: 90%;
+  max-width: 80%;
   max-height: 90%;
   position: relative;
   box-shadow: 0 4px 32px rgba(0, 0, 0, 0.5);
   animation: fadeIn 0.3s ease;
-  overflow: auto;
+  overflow: none;
 }
 
 .modal img {
